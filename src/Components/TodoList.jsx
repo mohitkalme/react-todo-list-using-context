@@ -1,45 +1,18 @@
+//hooks
 import { useContext } from "react";
+//contexts
 import { TodoContext } from "../Contexts";
+//components
+import TodoListItem from "./TodoListItem";
 
 const TodoList = () => {
-  const { todos, dispatchTodos } = useContext(TodoContext);
-
-  function handleChange(id) {
-    dispatchTodos({
-      type: "CHANGE_TODO",
-      id,
-    });
-  }
-
-  function handleClick(id) {
-    dispatchTodos({
-      type: "DELETE_TODO",
-      id,
-    });
-  }
+  const { todos } = useContext(TodoContext);
 
   return (
     <ul>
-      {todos.map((item) => {
-        return (
-          <li
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              gap: "1rem",
-            }}
-            key={item.id}
-          >
-            <input
-              type="checkbox"
-              checked={item.completed}
-              onChange={() => handleChange(item.id)}
-            />
-            <p> {item.todoText}</p>
-            <button onClick={() => handleClick(item.id)}>delete</button>
-          </li>
-        );
-      })}
+      {todos.map((item) => (
+        <TodoListItem key={item.id} item={item} />
+      ))}
     </ul>
   );
 };

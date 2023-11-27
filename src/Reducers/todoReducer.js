@@ -25,5 +25,18 @@ export default function todoReducer(state, action) {
 
     case "DELETE_TODO":
       return state.filter((todo) => todo.id !== action.id);
+
+    case "EDIT_TODO":
+      return state.map((todo) => {
+        if (todo.id === action.id) {
+          return {
+            ...todo,
+            todoText: action.todoText,
+          };
+        }
+        return todo;
+      });
+    default:
+      throw new Error(`TodoReducer case with ${action.type} is not defined `);
   }
 }

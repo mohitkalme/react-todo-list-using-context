@@ -1,4 +1,6 @@
+//hooks
 import { useContext, useState } from "react";
+//contexts
 import { TodoContext } from "../Contexts";
 
 const AddTodo = () => {
@@ -17,11 +19,14 @@ const AddTodo = () => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-        />
+        <label>
+          Add Todo
+          <input
+            type="text"
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+          />
+        </label>
         <button type="submit">submit</button>
       </form>
     </div>

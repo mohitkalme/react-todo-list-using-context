@@ -1,4 +1,6 @@
+//hooks
 import { useContext } from "react";
+//contexts
 import { TodoContext } from "../Contexts";
 
 const FilterList = () => {

@@ -5,7 +5,7 @@ import "./App.css";
 //contexts
 import { TodoContext } from "./Contexts";
 //hooks
-import { useMemo, useReducer } from "react";
+import { useReducer } from "react";
 //reducers
 import todoReducer from "./Reducers/todoReducer";
 //components
@@ -42,19 +42,14 @@ function App() {
   const [todos, dispatchTodos] = useReducer(todoReducer, initialTodos);
   const [filter, dispatchFilter] = useReducer(filterReducer, "All");
 
-  const filteredList = useMemo(
-    () => todos.filter(FILTER_MAP[filter]),
-    [filter, todos]
-  );
+  const filteredList = todos.filter(FILTER_MAP[filter]);
 
-  const value = useMemo(
-    () => ({
-      dispatchTodos,
-      dispatchFilter,
-      todos: filteredList,
-    }),
-    [filteredList]
-  );
+  const value = {
+    dispatchTodos,
+    dispatchFilter,
+    todos: filteredList,
+  };
+
   return (
     <TodoContext.Provider value={value}>
       <div className="card">

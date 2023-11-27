@@ -10,6 +10,6 @@ export default function filterReducer(state, action) {
       return "Completed";
 
     default:
-      break;
+      throw new Error(`filterReducer case with ${action.type} is not defined.`);
   }
 }
