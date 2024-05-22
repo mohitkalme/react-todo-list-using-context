@@ -1,5 +1,5 @@
 {
-  "name": "vite-project",
+  "name": "react-todo-list-using-context",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,9 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "nanoid": "^5.0.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "nanoid": "^5.0.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.37",
@@ -22,6 +22,6 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.4",
-    "vite": "^5.0.0"
+    "vite": "^5.2.11"
   }
 }
